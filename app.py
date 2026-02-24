@@ -65,8 +65,11 @@ if jaw_deformation == "Да":
 else:
     graph.node('Action2', 'Ортогнатическая операция', **action_style)
 
-graph.node('Final', 'Изготовление и установка\nортопедической конструкции', **default_style, fillcolor='#c8e6c9', color='#2e7d32')
-
+# Создаем отдельный стиль для финального этапа
+final_style = default_style.copy()
+final_style['fillcolor'] = '#c8e6c9'
+final_style['color'] = '#2e7d32'
+graph.node('Final', 'Изготовление и установка\nортопедической конструкции', **final_style)
 # --- Связи (Edges) ---
 # Базовый путь
 graph.edge('Start', 'Step1')
